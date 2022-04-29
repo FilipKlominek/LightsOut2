@@ -4,7 +4,7 @@ fun main() {
     print(game)
     val start = System.currentTimeMillis()
 
-    while (!game.checkWin()) {
+    while (!game.isWon()) {
         println("enter y")
         val y = readLine()!!.toInt()
         println("enter x")

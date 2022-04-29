@@ -25,16 +25,11 @@ class Game {
 
     var moveCount = 0
 
-    private fun isWon(): Boolean { //if any cell is true, returns false, else returns true
+    fun isWon(): Boolean { //if any cell is true, returns false, else returns true
         for (i in field) for (j in i) {
             if (j) return false
         }
         return true
-    }
-
-
-    fun checkWin(): Boolean {
-        return isWon()
     }
 
 
