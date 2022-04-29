@@ -13,7 +13,6 @@ class Game {
 
     fun click(y: Int, x: Int): Boolean {
         if (y > 4 || y < 0 || x > 4 || x < 0) { //check if it's in bounds
-            println("out of bounds")
             return false
         } else {
             field[y][x] = !field[y][x] //center
@@ -36,14 +35,7 @@ class Game {
 
 
     fun checkWin(): Boolean {
-        return if (!isWon()) false
-        else {
-
-            println("you won!")
-            println("moves: $moveCount")
-
-            true
-        }
+        return isWon()
     }
 
     fun print() {
