@@ -9,7 +9,7 @@ fun main() {
         val y = readLine()!!.toInt()
         println("enter x")
         val x = readLine()!!.toInt()
-        if (game.click(y, x)) game.moveCount++
+        if (game.click(y, x)) game.moveCount++ //only adds to moveCount if the click was in bounds
         game.print()
     }
     val end = System.currentTimeMillis()
