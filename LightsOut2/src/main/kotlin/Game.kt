@@ -1,8 +1,7 @@
 import kotlin.random.Random
 
 class Game {
-    private val field = Array(5) { arrayOf(true, true, true, true, true) } //creates a 2d array of true
-
+    val field = Array(5) { arrayOf(true, true, true, true, true) } //creates a 2d array of true
 
     fun randomize() { //for every cell decides randomly, whether or not to click it (happens before game starts)
         for (i in 0..4) for (j in 0..4) {
@@ -38,14 +37,5 @@ class Game {
         return isWon()
     }
 
-    fun print() {
-        for (i in field) {
-            for (j in i) {
-                if (j) print("⬛ ") else print("⬜ ")
-            }
-            println()
-        }
-        println("moves: $moveCount")
-        println()
-    }
+
 }
