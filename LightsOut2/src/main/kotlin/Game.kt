@@ -5,7 +5,10 @@ class Game {
 
     fun randomize() { //for every cell decides randomly, whether or not to click it (happens before game starts)
         for (i in 0..4) for (j in 0..4) {
-            if (Random.nextBoolean()) click(i, j)
+            if (Random.nextBoolean()) {
+                click(i, j)
+                moveCount--
+            }
         }
         if (isWon()) randomize() //if every cell is false (1 in 33554432), randomizes again
     }
@@ -19,6 +22,7 @@ class Game {
             if (y < 4) field[y + 1][x] = !field[y + 1][x] //down
             if (x > 0) field[y][x - 1] = !field[y][x - 1] //left
             if (x < 4) field[y][x + 1] = !field[y][x + 1] //right
+            moveCount++
         }
         return true
     }
@@ -31,6 +35,4 @@ class Game {
         }
         return true
     }
-
-
 }
